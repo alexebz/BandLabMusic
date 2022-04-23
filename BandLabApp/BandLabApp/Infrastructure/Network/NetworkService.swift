@@ -23,14 +23,14 @@ public protocol NetworkCancellable {
 extension URLSessionTask: NetworkCancellable { }
 
 public protocol NetworkService {
-//    typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
-//
-//    func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable?
+    typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
+    
+    func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable?
 }
 
 public protocol NetworkSessionManager {
     typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
-
+    
     func request(_ request: URLRequest,
                  completion: @escaping CompletionHandler) -> NetworkCancellable
 }
@@ -43,10 +43,11 @@ public protocol NetworkErrorLogger {
 
 // MARK: - Implementation
 public final class DefaultNetworkService {
+    
     private let config: NetworkConfigurable
     private let sessionManager: NetworkSessionManager
     private let logger: NetworkErrorLogger
-
+    
     public init(config: NetworkConfigurable,
                 sessionManager: NetworkSessionManager = DefaultNetworkSessionManager(),
                 logger: NetworkErrorLogger = DefaultNetworkErrorLogger()) {
@@ -54,19 +55,53 @@ public final class DefaultNetworkService {
         self.config = config
         self.logger = logger
     }
+    
+    private func request(request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
+        
+        let sessionDataTask = sessionManager.request(request) { data, response, requestError in
+            
+            if let requestError = requestError {
+                var error: NetworkError
+                if let response = response as? HTTPURLResponse {
+                    error = .error(statusCode: response.statusCode, data: data)
+                } else {
+                    error = self.resolve(error: requestError)
+                }
+                
+                self.logger.log(error: error)
+                completion(.failure(error))
+            } else {
+                self.logger.log(responseData: data, response: response)
+                completion(.success(data))
+            }
+        }
+    
+        logger.log(request: request)
+
+        return sessionDataTask
+    }
+    
+    private func resolve(error: Error) -> NetworkError {
+        let code = URLError.Code(rawValue: (error as NSError).code)
+        switch code {
+        case .notConnectedToInternet: return .notConnected
+        case .cancelled: return .cancelled
+        default: return .generic(error)
+        }
+    }
 }
 
 extension DefaultNetworkService: NetworkService {
-
-//    public func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable? {
-//        do {
-//            let urlRequest = try endpoint.urlRequest(with: config)
-//            return request(request: urlRequest, completion: completion)
-//        } catch {
-//            completion(.failure(.urlGeneration))
-//            return nil
-//        }
-//    }
+    
+    public func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable? {
+        do {
+            let urlRequest = try endpoint.urlRequest(with: config)
+            return request(request: urlRequest, completion: completion)
+        } catch {
+            completion(.failure(.urlGeneration))
+            return nil
+        }
+    }
 }
 
 // MARK: - Default Network Session Manager
@@ -105,6 +140,32 @@ public final class DefaultNetworkErrorLogger: NetworkErrorLogger {
 
     public func log(error: Error) {
         printIfDebug("\(error)")
+    }
+}
+
+// MARK: - NetworkError extension
+
+extension NetworkError {
+    public var isNotFoundError: Bool { return hasStatusCode(404) }
+    
+    public func hasStatusCode(_ codeError: Int) -> Bool {
+        switch self {
+        case let .error(code, _):
+            return code == codeError
+        default: return false
+        }
+    }
+}
+
+extension Dictionary where Key == String {
+    func prettyPrint() -> String {
+        var string: String = ""
+        if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
+            if let nstr = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+                string = nstr as String
+            }
+        }
+        return string
     }
 }
 

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct SongsListItemViewModel: Equatable {
+    let title: String
+}
+
+extension SongsListItemViewModel {
+
+    init(song: Song) {
+        self.title = song.title ?? ""
+    }
+}

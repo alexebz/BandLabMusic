@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SongsListViewController: UIViewController, StoryboardInstantiable {
+final class SongsListViewController: UIViewController, StoryboardInstantiable, Alertable {
 
     private var viewModel: SongsListViewModel!
 
@@ -23,7 +23,30 @@ final class SongsListViewController: UIViewController, StoryboardInstantiable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind(to: viewModel)
+        viewModel.viewDidLoad()
     }
-
+    
+    private func bind(to viewModel: SongsListViewModel) {
+        viewModel.items.observe(on: self) { [weak self] _ in self?.updateItems() }
+        viewModel.error.observe(on: self) { [weak self] in self?.showError($0) }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == String(describing: SongsListTableViewController.self),
+            let destinationVC = segue.destination as? SongsListTableViewController {
+            songsTableViewController = destinationVC
+            songsTableViewController?.viewModel = viewModel
+        }
+    }
+    
     // MARK: - Private
+    private func updateItems() {
+        songsTableViewController?.reload()
+    }
+    
+    private func showError(_ error: String) {
+        guard !error.isEmpty else { return }
+        showAlert(title: viewModel.errorTitle, message: error)
+    }
 }

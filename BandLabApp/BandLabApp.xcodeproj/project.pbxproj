@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29E1B0F4281407BC00BB3227 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0F3281407BC00BB3227 /* Song.swift */; };
+		29E1B0F628140AB000BB3227 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0F528140AB000BB3227 /* Observable.swift */; };
+		29E1B0F8281412A900BB3227 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0F7281412A900BB3227 /* Endpoint.swift */; };
+		29E1B0FB2814134700BB3227 /* DefaultSongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0FA2814134700BB3227 /* DefaultSongsRepository.swift */; };
+		29E1B100281413C800BB3227 /* SongsRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0FF281413C800BB3227 /* SongsRepositories.swift */; };
+		29E1B1022814141000BB3227 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B1012814141000BB3227 /* Cancellable.swift */; };
+		29E1B105281414A400BB3227 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B104281414A400BB3227 /* RepositoryTask.swift */; };
+		29E1B1082814156700BB3227 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B1072814156700BB3227 /* APIEndpoints.swift */; };
+		29E1B10B281415AD00BB3227 /* SongsResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B10A281415AD00BB3227 /* SongsResponseDTO+Mapping.swift */; };
+		29E1B10D281419A300BB3227 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B10C281419A300BB3227 /* ConnectionError.swift */; };
+		29E1B10F28141E8900BB3227 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B10E28141E8900BB3227 /* Alertable.swift */; };
 		FAF516AB2812BC1600730323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516AA2812BC1600730323 /* AppDelegate.swift */; };
 		FAF516B32812BC1600730323 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAF516B12812BC1600730323 /* CoreDataStorage.xcdatamodeld */; };
 		FAF516B52812BC1800730323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF516B42812BC1800730323 /* Assets.xcassets */; };
@@ -43,6 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29E1B0F3281407BC00BB3227 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		29E1B0F528140AB000BB3227 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		29E1B0F7281412A900BB3227 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		29E1B0FA2814134700BB3227 /* DefaultSongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSongsRepository.swift; sourceTree = "<group>"; };
+		29E1B0FF281413C800BB3227 /* SongsRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsRepositories.swift; sourceTree = "<group>"; };
+		29E1B1012814141000BB3227 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		29E1B104281414A400BB3227 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		29E1B1072814156700BB3227 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		29E1B10A281415AD00BB3227 /* SongsResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongsResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		29E1B10C281419A300BB3227 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		29E1B10E28141E8900BB3227 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		FAF516A72812BC1600730323 /* BandLabApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandLabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF516AA2812BC1600730323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF516B22812BC1600730323 /* BandLabApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BandLabApp.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +112,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29E1B0F12814078C00BB3227 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B0F3281407BC00BB3227 /* Song.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		29E1B0F2281407A300BB3227 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B1012814141000BB3227 /* Cancellable.swift */,
+				29E1B10C281419A300BB3227 /* ConnectionError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		29E1B0F92814132800BB3227 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B0FA2814134700BB3227 /* DefaultSongsRepository.swift */,
+				29E1B1032814149700BB3227 /* Utils */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		29E1B0FC2814139D00BB3227 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B0FD281413AB00BB3227 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		29E1B0FD281413AB00BB3227 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B0FF281413C800BB3227 /* SongsRepositories.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		29E1B1032814149700BB3227 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B104281414A400BB3227 /* RepositoryTask.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		29E1B106281414F600BB3227 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B1072814156700BB3227 /* APIEndpoints.swift */,
+				29E1B1092814159000BB3227 /* DataMapping */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		29E1B1092814159000BB3227 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				29E1B10A281415AD00BB3227 /* SongsResponseDTO+Mapping.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
 		FAF5169E2812BC1600730323 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +205,7 @@
 				FAF516D02813D6FA00730323 /* Domain */,
 				FAF516D12813D70500730323 /* Data */,
 				FAF516D22813D70F00730323 /* Infrastructure */,
-				FAF516D32813D71B00730323 /* Common */,
+				29E1B0F2281407A300BB3227 /* Common */,
 				FAF516D42813D72500730323 /* Resources */,
 			);
 			path = BandLabApp;
@@ -155,6 +244,8 @@
 		FAF516D02813D6FA00730323 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				29E1B0F12814078C00BB3227 /* Entities */,
+				29E1B0FC2814139D00BB3227 /* Interfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -162,6 +253,8 @@
 		FAF516D12813D70500730323 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				29E1B0F92814132800BB3227 /* Repositories */,
+				29E1B106281414F600BB3227 /* Network */,
 				FAF516D82813D8D600730323 /* CoreDataStorage */,
 			);
 			path = Data;
@@ -173,13 +266,6 @@
 				FAF516D72813D84300730323 /* Network */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		FAF516D32813D71B00730323 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		FAF516D42813D72500730323 /* Resources */ = {
@@ -199,6 +285,7 @@
 				FAF516EA2813E49300730323 /* DataTransferService.swift */,
 				FAF516EC2813E54800730323 /* NetworkConfig.swift */,
 				FAF516EE2813E5BD00730323 /* NetworkService.swift */,
+				29E1B0F7281412A900BB3227 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -287,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF517022813F76F00730323 /* Protocols */,
+				29E1B0F528140AB000BB3227 /* Observable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -295,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF517032813F78100730323 /* StoryboardInstantiable.swift */,
+				29E1B10E28141E8900BB3227 /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -407,7 +496,10 @@
 				FAF516FD2813F3E400730323 /* SongsListTableViewController.swift in Sources */,
 				FAF517042813F78100730323 /* StoryboardInstantiable.swift in Sources */,
 				FAF516B32812BC1600730323 /* CoreDataStorage.xcdatamodeld in Sources */,
+				29E1B10B281415AD00BB3227 /* SongsResponseDTO+Mapping.swift in Sources */,
 				FAF516ED2813E54800730323 /* NetworkConfig.swift in Sources */,
+				29E1B100281413C800BB3227 /* SongsRepositories.swift in Sources */,
+				29E1B0F8281412A900BB3227 /* Endpoint.swift in Sources */,
 				FAF516F82813F3B500730323 /* SongsListViewModel.swift in Sources */,
 				FAF516DF2813DB2900730323 /* AppDIContainer.swift in Sources */,
 				FAF516E12813DC6200730323 /* SongsSceneDIContainer.swift in Sources */,
@@ -415,10 +507,18 @@
 				FAF516F42813F22000730323 /* SongsListViewController.swift in Sources */,
 				FAF516E92813E0E700730323 /* AppConfiguration.swift in Sources */,
 				FAF516EB2813E49300730323 /* DataTransferService.swift in Sources */,
+				29E1B0F4281407BC00BB3227 /* Song.swift in Sources */,
+				29E1B0FB2814134700BB3227 /* DefaultSongsRepository.swift in Sources */,
+				29E1B1022814141000BB3227 /* Cancellable.swift in Sources */,
 				FAF516AB2812BC1600730323 /* AppDelegate.swift in Sources */,
+				29E1B0F628140AB000BB3227 /* Observable.swift in Sources */,
+				29E1B1082814156700BB3227 /* APIEndpoints.swift in Sources */,
+				29E1B105281414A400BB3227 /* RepositoryTask.swift in Sources */,
 				FAF516E32813DDB100730323 /* AppAppearance.swift in Sources */,
 				FAF516EF2813E5BD00730323 /* NetworkService.swift in Sources */,
+				29E1B10D281419A300BB3227 /* ConnectionError.swift in Sources */,
 				FAF516E72813E01C00730323 /* SongsFlowCoordinator.swift in Sources */,
+				29E1B10F28141E8900BB3227 /* Alertable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

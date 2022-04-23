@@ -9,6 +9,21 @@
 import UIKit
 
 final class SongsListItemCell: UITableViewCell {
+    @IBOutlet weak var songTitle: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var backgroundContainer: UIView!
+    
     static let reuseIdentifier = String(describing: SongsListItemCell.self)
     static let height = CGFloat(130)
+    
+    private var viewModel: SongsListItemViewModel!
+    
+    func fill(with viewModel: SongsListItemViewModel) {
+        self.viewModel = viewModel
+        songTitle.text = viewModel.title
+    }
+    
+    @IBAction func actionButtonPressed() {
+        
+    }
 }
