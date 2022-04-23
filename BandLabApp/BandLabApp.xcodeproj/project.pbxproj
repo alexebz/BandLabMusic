@@ -15,6 +15,13 @@
 		FAF516B82812BC1800730323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF516B62812BC1800730323 /* LaunchScreen.storyboard */; };
 		FAF516C32812BC1800730323 /* BandLabAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516C22812BC1800730323 /* BandLabAppTests.swift */; };
 		FAF516D62813D81D00730323 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF516D52813D81D00730323 /* Localizable.strings */; };
+		FAF516DA2813DA5F00730323 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516D92813DA5F00730323 /* CoreDataStorage.swift */; };
+		FAF516DD2813DB0D00730323 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516DC2813DB0D00730323 /* AppFlowCoordinator.swift */; };
+		FAF516DF2813DB2900730323 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516DE2813DB2900730323 /* AppDIContainer.swift */; };
+		FAF516E12813DC6200730323 /* SongsSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516E02813DC6200730323 /* SongsSceneDIContainer.swift */; };
+		FAF516E32813DDB100730323 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516E22813DDB100730323 /* AppAppearance.swift */; };
+		FAF516E72813E01C00730323 /* SongsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516E62813E01C00730323 /* SongsFlowCoordinator.swift */; };
+		FAF516E92813E0E700730323 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516E82813E0E700730323 /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		FAF516C22812BC1800730323 /* BandLabAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandLabAppTests.swift; sourceTree = "<group>"; };
 		FAF516C42812BC1800730323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF516D52813D81D00730323 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FAF516D92813DA5F00730323 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		FAF516DC2813DB0D00730323 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		FAF516DE2813DB2900730323 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		FAF516E02813DC6200730323 /* SongsSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsSceneDIContainer.swift; sourceTree = "<group>"; };
+		FAF516E22813DDB100730323 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		FAF516E62813E01C00730323 /* SongsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsFlowCoordinator.swift; sourceTree = "<group>"; };
+		FAF516E82813E0E700730323 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				FAF516AA2812BC1600730323 /* AppDelegate.swift */,
+				FAF516E22813DDB100730323 /* AppAppearance.swift */,
+				FAF516E82813E0E700730323 /* AppConfiguration.swift */,
+				FAF516DC2813DB0D00730323 /* AppFlowCoordinator.swift */,
+				FAF516DB2813DAF100730323 /* DIContainers */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -112,6 +130,7 @@
 		FAF516CF2813D6EB00730323 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FAF516E42813DEF800730323 /* SongsScene */,
 				FAF516AC2812BC1600730323 /* ViewController.swift */,
 				FAF516AE2812BC1600730323 /* Main.storyboard */,
 			);
@@ -170,8 +189,34 @@
 			isa = PBXGroup;
 			children = (
 				FAF516B12812BC1600730323 /* CoreDataStorage.xcdatamodeld */,
+				FAF516D92813DA5F00730323 /* CoreDataStorage.swift */,
 			);
 			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		FAF516DB2813DAF100730323 /* DIContainers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF516DE2813DB2900730323 /* AppDIContainer.swift */,
+				FAF516E02813DC6200730323 /* SongsSceneDIContainer.swift */,
+			);
+			path = DIContainers;
+			sourceTree = "<group>";
+		};
+		FAF516E42813DEF800730323 /* SongsScene */ = {
+			isa = PBXGroup;
+			children = (
+				FAF516E52813DF0000730323 /* Flows */,
+			);
+			path = SongsScene;
+			sourceTree = "<group>";
+		};
+		FAF516E52813DF0000730323 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				FAF516E62813E01C00730323 /* SongsFlowCoordinator.swift */,
+			);
+			path = Flows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF516DA2813DA5F00730323 /* CoreDataStorage.swift in Sources */,
 				FAF516B32812BC1600730323 /* CoreDataStorage.xcdatamodeld in Sources */,
+				FAF516DF2813DB2900730323 /* AppDIContainer.swift in Sources */,
+				FAF516E12813DC6200730323 /* SongsSceneDIContainer.swift in Sources */,
+				FAF516DD2813DB0D00730323 /* AppFlowCoordinator.swift in Sources */,
 				FAF516AD2812BC1600730323 /* ViewController.swift in Sources */,
+				FAF516E92813E0E700730323 /* AppConfiguration.swift in Sources */,
 				FAF516AB2812BC1600730323 /* AppDelegate.swift in Sources */,
+				FAF516E32813DDB100730323 /* AppAppearance.swift in Sources */,
+				FAF516E72813E01C00730323 /* SongsFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +489,7 @@
 		FAF516C82812BC1800730323 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://gist.githubusercontent.com";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BandLabApp/Resources/Info.plist;
@@ -454,6 +507,7 @@
 		FAF516C92812BC1800730323 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://gist.githubusercontent.com";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BandLabApp/Resources/Info.plist;
