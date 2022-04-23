@@ -23,6 +23,7 @@ final class SongsListViewController: UIViewController, StoryboardInstantiable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.viewDidLoad()
     }
+
+    // MARK: - Private
 }

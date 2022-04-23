@@ -30,7 +30,6 @@ final class AppDIContainer {
     func makeSongsSceneDIContainer() -> SongsSceneDIContainer {
         let dependencies = SongsSceneDIContainer.Dependencies(apiDataTransferService: apiDataTransferService,
                                                               songDataTransferService: songDataTransferService)
-//                                                               songDataTransferService: songDataTransferService)
         return SongsSceneDIContainer(dependencies: dependencies)
     }
 }

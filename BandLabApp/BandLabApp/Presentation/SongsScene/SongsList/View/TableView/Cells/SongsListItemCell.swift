@@ -6,4 +6,9 @@
 //  Copyright © 2022 AlexeyVasilyev. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class SongsListItemCell: UITableViewCell {
+    static let reuseIdentifier = String(describing: SongsListItemCell.self)
+    static let height = CGFloat(130)
+}
