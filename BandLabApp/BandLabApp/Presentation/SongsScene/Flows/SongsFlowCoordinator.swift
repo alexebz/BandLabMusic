@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SongsFlowCoordinatorDependencies  {
-
+    func makeSongsListViewController(actions: SongsListViewModelActions) -> SongsListViewController
 }
 
 final class SongsFlowCoordinator {
@@ -17,18 +17,18 @@ final class SongsFlowCoordinator {
     private weak var navigationController: UINavigationController?
     private let dependencies: SongsFlowCoordinatorDependencies
 
+    private weak var songsListVC: SongsListViewController?
+
     init(navigationController: UINavigationController, dependencies: SongsFlowCoordinatorDependencies) {
         self.navigationController = navigationController
         self.dependencies = dependencies
     }
 
     func start() {
-//        let actions = MoviesListViewModelActions(showMovieDetails: showMovieDetails,
-//                                                 showMovieQueriesSuggestions: showMovieQueriesSuggestions,
-//                                                 closeMovieQueriesSuggestions: closeMovieQueriesSuggestions)
-//        let vc = dependencies.makeMoviesListViewController(actions: actions)
-//
-//        navigationController?.pushViewController(vc, animated: false)
-//        moviesListVC = vc
+        let actions = SongsListViewModelActions()
+        let vc = dependencies.makeSongsListViewController(actions: actions)
+
+        navigationController?.pushViewController(vc, animated: false)
+        songsListVC = vc
     }
 }

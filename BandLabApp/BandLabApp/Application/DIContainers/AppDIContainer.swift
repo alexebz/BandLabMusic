@@ -16,13 +16,21 @@ final class AppDIContainer {
         let config = ApiDataNetworkConfig(baseURL: URL(string: appConfiguration.apiBaseURL)!)
 
         let apiDataNetwork = DefaultNetworkService(config: config)
-        return DefaultDataTransferService(with: apiDataNetwork)
+        return DefaultDataTransferService(with: apiDataNetwork as NetworkService)
+    }()
+    
+    lazy var songDataTransferService: DataTransferService = {
+        let config = ApiDataNetworkConfig(baseURL: URL(string: appConfiguration.apiBaseURL)!)
+
+        let apiDataNetwork = DefaultNetworkService(config: config)
+        return DefaultDataTransferService(with: apiDataNetwork as NetworkService)
     }()
 
     // MARK: - DIContainers of scenes
     func makeSongsSceneDIContainer() -> SongsSceneDIContainer {
         let dependencies = SongsSceneDIContainer.Dependencies(apiDataTransferService: apiDataTransferService,
-                                                               imageDataTransferService: imageDataTransferService)
+                                                              songDataTransferService: songDataTransferService)
+//                                                               songDataTransferService: songDataTransferService)
         return SongsSceneDIContainer(dependencies: dependencies)
     }
 }
