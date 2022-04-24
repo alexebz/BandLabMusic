@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 struct SongsListViewModelActions {
     /// Note: Possible actions for flow coordinator
@@ -29,8 +30,11 @@ protocol SongsListViewModelOutput {
 final class DefaultSongsListViewModel: SongsListViewModel {
     
     private let songRepository: SongsRepository
+    private let audioRepository: AudioRepository
     
     private var songsLoadTask: Cancellable? { willSet { songsLoadTask?.cancel() } }
+    
+    private var audioPlayer: AVAudioPlayer?
     
     // MARK: - OUTPUT
     var items: Observable<[SongsListItemViewModel]> = Observable([])
@@ -41,8 +45,9 @@ final class DefaultSongsListViewModel: SongsListViewModel {
     let errorTitle = NSLocalizedString("Error", comment: "")
     
     // MARK: - Init
-    init(songRepository: SongsRepository) {
+    init(songRepository: SongsRepository, audioRepository: AudioRepository) {
         self.songRepository = songRepository
+        self.audioRepository = audioRepository
     }
     
     // MARK: - Private
@@ -64,7 +69,9 @@ final class DefaultSongsListViewModel: SongsListViewModel {
     }
     
     private func updateSongs(_ songs: Songs) {
-        items.value = songs.songs.map(SongsListItemViewModel.init)
+        items.value = songs.songs.map { song in
+            SongsListItemViewModel(song: song, audioRepository: audioRepository)
+        }
     }
 
 }

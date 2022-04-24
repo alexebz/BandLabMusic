@@ -23,6 +23,7 @@ final class SongsListViewController: UIViewController, StoryboardInstantiable, A
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -41,6 +42,10 @@ final class SongsListViewController: UIViewController, StoryboardInstantiable, A
     }
     
     // MARK: - Private
+    private func setupViews() {
+        title = viewModel.screenTitle
+    }
+    
     private func updateItems() {
         songsTableViewController?.reload()
     }

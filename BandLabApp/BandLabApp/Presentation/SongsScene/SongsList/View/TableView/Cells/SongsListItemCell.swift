@@ -24,6 +24,6 @@ final class SongsListItemCell: UITableViewCell {
     }
     
     @IBAction func actionButtonPressed() {
-        
+        self.viewModel.peformStateAction()
     }
 }

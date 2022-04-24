@@ -8,7 +8,13 @@
 
 import Foundation
 
-class RepositoryTask: Cancellable {
+protocol NetworkTrackable: Cancellable, Trackable {}
+
+class RepositoryTask: NetworkTrackable {
+    var progressKVO: Progress? {
+        return networkTask?.progressKVO
+    }
+    
     var networkTask: NetworkCancellable?
     var isCancelled: Bool = false
     

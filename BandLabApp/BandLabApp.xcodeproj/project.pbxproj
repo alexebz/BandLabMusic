@@ -11,13 +11,16 @@
 		29E1B0F628140AB000BB3227 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0F528140AB000BB3227 /* Observable.swift */; };
 		29E1B0F8281412A900BB3227 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0F7281412A900BB3227 /* Endpoint.swift */; };
 		29E1B0FB2814134700BB3227 /* DefaultSongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0FA2814134700BB3227 /* DefaultSongsRepository.swift */; };
-		29E1B100281413C800BB3227 /* SongsRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0FF281413C800BB3227 /* SongsRepositories.swift */; };
+		29E1B100281413C800BB3227 /* SongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B0FF281413C800BB3227 /* SongsRepository.swift */; };
 		29E1B1022814141000BB3227 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B1012814141000BB3227 /* Cancellable.swift */; };
 		29E1B105281414A400BB3227 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B104281414A400BB3227 /* RepositoryTask.swift */; };
 		29E1B1082814156700BB3227 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B1072814156700BB3227 /* APIEndpoints.swift */; };
 		29E1B10B281415AD00BB3227 /* SongsResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B10A281415AD00BB3227 /* SongsResponseDTO+Mapping.swift */; };
 		29E1B10D281419A300BB3227 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B10C281419A300BB3227 /* ConnectionError.swift */; };
 		29E1B10F28141E8900BB3227 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B10E28141E8900BB3227 /* Alertable.swift */; };
+		29E1B11128152A8D00BB3227 /* DefaulAudioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B11028152A8D00BB3227 /* DefaulAudioRepository.swift */; };
+		29E1B11328152B0500BB3227 /* AudioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B11228152B0500BB3227 /* AudioRepository.swift */; };
+		29E1B11528156D2F00BB3227 /* Trackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B11428156D2F00BB3227 /* Trackable.swift */; };
 		FAF516AB2812BC1600730323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516AA2812BC1600730323 /* AppDelegate.swift */; };
 		FAF516B32812BC1600730323 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAF516B12812BC1600730323 /* CoreDataStorage.xcdatamodeld */; };
 		FAF516B52812BC1800730323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF516B42812BC1800730323 /* Assets.xcassets */; };
@@ -58,13 +61,16 @@
 		29E1B0F528140AB000BB3227 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		29E1B0F7281412A900BB3227 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		29E1B0FA2814134700BB3227 /* DefaultSongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSongsRepository.swift; sourceTree = "<group>"; };
-		29E1B0FF281413C800BB3227 /* SongsRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsRepositories.swift; sourceTree = "<group>"; };
+		29E1B0FF281413C800BB3227 /* SongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsRepository.swift; sourceTree = "<group>"; };
 		29E1B1012814141000BB3227 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		29E1B104281414A400BB3227 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		29E1B1072814156700BB3227 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		29E1B10A281415AD00BB3227 /* SongsResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongsResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		29E1B10C281419A300BB3227 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		29E1B10E28141E8900BB3227 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		29E1B11028152A8D00BB3227 /* DefaulAudioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaulAudioRepository.swift; sourceTree = "<group>"; };
+		29E1B11228152B0500BB3227 /* AudioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRepository.swift; sourceTree = "<group>"; };
+		29E1B11428156D2F00BB3227 /* Trackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trackable.swift; sourceTree = "<group>"; };
 		FAF516A72812BC1600730323 /* BandLabApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandLabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF516AA2812BC1600730323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF516B22812BC1600730323 /* BandLabApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BandLabApp.xcdatamodel; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			children = (
 				29E1B1012814141000BB3227 /* Cancellable.swift */,
 				29E1B10C281419A300BB3227 /* ConnectionError.swift */,
+				29E1B11428156D2F00BB3227 /* Trackable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				29E1B0FA2814134700BB3227 /* DefaultSongsRepository.swift */,
+				29E1B11028152A8D00BB3227 /* DefaulAudioRepository.swift */,
 				29E1B1032814149700BB3227 /* Utils */,
 			);
 			path = Repositories;
@@ -149,7 +157,8 @@
 		29E1B0FD281413AB00BB3227 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				29E1B0FF281413C800BB3227 /* SongsRepositories.swift */,
+				29E1B0FF281413C800BB3227 /* SongsRepository.swift */,
+				29E1B11228152B0500BB3227 /* AudioRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -498,7 +507,7 @@
 				FAF516B32812BC1600730323 /* CoreDataStorage.xcdatamodeld in Sources */,
 				29E1B10B281415AD00BB3227 /* SongsResponseDTO+Mapping.swift in Sources */,
 				FAF516ED2813E54800730323 /* NetworkConfig.swift in Sources */,
-				29E1B100281413C800BB3227 /* SongsRepositories.swift in Sources */,
+				29E1B100281413C800BB3227 /* SongsRepository.swift in Sources */,
 				29E1B0F8281412A900BB3227 /* Endpoint.swift in Sources */,
 				FAF516F82813F3B500730323 /* SongsListViewModel.swift in Sources */,
 				FAF516DF2813DB2900730323 /* AppDIContainer.swift in Sources */,
@@ -509,6 +518,8 @@
 				FAF516EB2813E49300730323 /* DataTransferService.swift in Sources */,
 				29E1B0F4281407BC00BB3227 /* Song.swift in Sources */,
 				29E1B0FB2814134700BB3227 /* DefaultSongsRepository.swift in Sources */,
+				29E1B11528156D2F00BB3227 /* Trackable.swift in Sources */,
+				29E1B11328152B0500BB3227 /* AudioRepository.swift in Sources */,
 				29E1B1022814141000BB3227 /* Cancellable.swift in Sources */,
 				FAF516AB2812BC1600730323 /* AppDelegate.swift in Sources */,
 				29E1B0F628140AB000BB3227 /* Observable.swift in Sources */,
@@ -517,6 +528,7 @@
 				FAF516E32813DDB100730323 /* AppAppearance.swift in Sources */,
 				FAF516EF2813E5BD00730323 /* NetworkService.swift in Sources */,
 				29E1B10D281419A300BB3227 /* ConnectionError.swift in Sources */,
+				29E1B11128152A8D00BB3227 /* DefaulAudioRepository.swift in Sources */,
 				FAF516E72813E01C00730323 /* SongsFlowCoordinator.swift in Sources */,
 				29E1B10F28141E8900BB3227 /* Alertable.swift in Sources */,
 			);

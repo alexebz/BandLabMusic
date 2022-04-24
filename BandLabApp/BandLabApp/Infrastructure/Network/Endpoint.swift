@@ -101,7 +101,7 @@ extension Requestable {
         config.queryParameters.forEach {
             urlQueryItems.append(URLQueryItem(name: $0.key, value: $0.value))
         }
-        urlComponents.queryItems = !urlQueryItems.isEmpty ? urlQueryItems : nil
+        urlComponents.queryItems = !urlQueryItems.isEmpty ? urlQueryItems : urlComponents.queryItems
         guard let url = urlComponents.url else { throw RequestGenerationError.components }
         return url
     }

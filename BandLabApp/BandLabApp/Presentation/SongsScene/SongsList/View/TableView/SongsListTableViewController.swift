@@ -11,6 +11,7 @@ import UIKit
 final class SongsListTableViewController: UITableViewController {
 
     var viewModel: SongsListViewModel!
+    var audioRepository: AudioRepository?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {

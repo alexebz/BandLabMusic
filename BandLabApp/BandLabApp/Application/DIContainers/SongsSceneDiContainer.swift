@@ -32,12 +32,16 @@ final class SongsSceneDIContainer: SongsFlowCoordinatorDependencies {
     }
 
     func makeSongsListViewModel(actions: SongsListViewModelActions) -> SongsListViewModel {
-        return DefaultSongsListViewModel(songRepository: makeSongsRepository())
+        return DefaultSongsListViewModel(songRepository: makeSongsRepository(),audioRepository: makeAudioRepository())
     }
     
     // MARK: - Repositories
     func makeSongsRepository() -> SongsRepository {
         return DefaultSongsRepository(dataTransferService: dependencies.apiDataTransferService)
+    }
+    
+    func makeAudioRepository() -> AudioRepository {
+        return DefaultAudioRepository(dataTransferService: dependencies.songDataTransferService)
     }
 }
 

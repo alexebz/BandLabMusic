@@ -16,11 +16,15 @@ public enum NetworkError: Error {
     case urlGeneration
 }
 
-public protocol NetworkCancellable {
+public protocol NetworkCancellable: Trackable {
     func cancel()
 }
 
-extension URLSessionTask: NetworkCancellable { }
+extension URLSessionTask: NetworkCancellable {
+    public var progressKVO: Progress? {
+        return self.progress
+    }
+}
 
 public protocol NetworkService {
     typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
