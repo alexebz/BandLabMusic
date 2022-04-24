@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 enum AudioItemState {
     case Initial
@@ -33,8 +34,8 @@ final class SongsListItemViewModel: SongsListItemViewModelOutput {
     
     let audioRepository: AudioRepository
     
+    private var audioPlayer: AVAudioPlayer?
     private var observation: NSKeyValueObservation?
-    private var audioData: Data?
     
     init(song: Song, audioRepository: AudioRepository) {
         self.title = song.title ?? ""
@@ -51,11 +52,23 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
         case .Loading(_):
             break
         case .ReadyToPlay:
-            playAudio()
+            guard let audioPlayer = audioPlayer else {
+                print("no audioPlayer to playAudio")
+                return
+            }
+            playAudio(audioPlayer)
         case .Playing:
-            pauseAudio()
+            guard let audioPlayer = audioPlayer else {
+                print("no audioPlayer to resumePlaying")
+                return
+            }
+            pauseAudio(audioPlayer)
         case .Paused:
-            resumePlaying()
+            guard let audioPlayer = audioPlayer else {
+                print("no audioPlayer to pauseAudio")
+                return
+            }
+            resumePlaying(audioPlayer)
         }
     }
     
@@ -66,9 +79,10 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
             guard let self = self else { return }
             if case let .success(data) = result {
                 print(data)
-                self.audioData = data
                 self.observation?.invalidate()
+                try! self.audioPlayer = AVAudioPlayer(data: data)
                 self.audioItemState.value = .ReadyToPlay
+        
             }
         })
         observation = task?.progressKVO?.observe(\.fractionCompleted) { [weak self] progress, _ in
@@ -78,16 +92,24 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
         }
     }
     
-    private func playAudio() {
+    private func playAudio(_ player: AVAudioPlayer) {
+        player.prepareToPlay()
+        player.play()
         audioItemState.value = .Playing
     }
     
-    private func pauseAudio() {
+    private func pauseAudio(_ player: AVAudioPlayer) {
+        player.pause()
         audioItemState.value = .Paused
     }
     
-    private func resumePlaying() {
+    private func resumePlaying(_ player: AVAudioPlayer) {
+        player.play()
         audioItemState.value = .Playing
     }
 
 }
+
+
+
+

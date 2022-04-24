@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AVFoundation
 
 struct SongsListViewModelActions {
     /// Note: Possible actions for flow coordinator
@@ -34,8 +33,6 @@ final class DefaultSongsListViewModel: SongsListViewModel {
     
     private var songsLoadTask: Cancellable? { willSet { songsLoadTask?.cancel() } }
     
-    private var audioPlayer: AVAudioPlayer?
-    
     // MARK: - OUTPUT
     var items: Observable<[SongsListItemViewModel]> = Observable([])
 
@@ -59,7 +56,7 @@ final class DefaultSongsListViewModel: SongsListViewModel {
             case .failure(let error):
                 self.handle(error: error)
             }
-    })
+        })
     }
     
     private func handle(error: Error) {
