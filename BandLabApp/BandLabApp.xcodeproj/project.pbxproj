@@ -21,6 +21,7 @@
 		29E1B11128152A8D00BB3227 /* DefaulAudioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B11028152A8D00BB3227 /* DefaulAudioRepository.swift */; };
 		29E1B11328152B0500BB3227 /* AudioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B11228152B0500BB3227 /* AudioRepository.swift */; };
 		29E1B11528156D2F00BB3227 /* Trackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1B11428156D2F00BB3227 /* Trackable.swift */; };
+		29E7386D2816F4BC006CE487 /* ProgressCicrle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E7386C2816F4BC006CE487 /* ProgressCicrle.swift */; };
 		FAF516AB2812BC1600730323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF516AA2812BC1600730323 /* AppDelegate.swift */; };
 		FAF516B32812BC1600730323 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAF516B12812BC1600730323 /* CoreDataStorage.xcdatamodeld */; };
 		FAF516B52812BC1800730323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF516B42812BC1800730323 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		29E1B11028152A8D00BB3227 /* DefaulAudioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaulAudioRepository.swift; sourceTree = "<group>"; };
 		29E1B11228152B0500BB3227 /* AudioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRepository.swift; sourceTree = "<group>"; };
 		29E1B11428156D2F00BB3227 /* Trackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trackable.swift; sourceTree = "<group>"; };
+		29E7386C2816F4BC006CE487 /* ProgressCicrle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCicrle.swift; sourceTree = "<group>"; };
 		FAF516A72812BC1600730323 /* BandLabApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandLabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF516AA2812BC1600730323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF516B22812BC1600730323 /* BandLabApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BandLabApp.xcdatamodel; sourceTree = "<group>"; };
@@ -188,6 +190,22 @@
 			path = DataMapping;
 			sourceTree = "<group>";
 		};
+		29E7386A2816F480006CE487 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				29E7386B2816F48B006CE487 /* ProgressCircle */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		29E7386B2816F48B006CE487 /* ProgressCircle */ = {
+			isa = PBXGroup;
+			children = (
+				29E7386C2816F4BC006CE487 /* ProgressCicrle.swift */,
+			);
+			path = ProgressCircle;
+			sourceTree = "<group>";
+		};
 		FAF5169E2812BC1600730323 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +232,7 @@
 				FAF516D02813D6FA00730323 /* Domain */,
 				FAF516D12813D70500730323 /* Data */,
 				FAF516D22813D70F00730323 /* Infrastructure */,
+				29E7386A2816F480006CE487 /* CustomUI */,
 				29E1B0F2281407A300BB3227 /* Common */,
 				FAF516D42813D72500730323 /* Resources */,
 			);
@@ -529,6 +548,7 @@
 				FAF516EF2813E5BD00730323 /* NetworkService.swift in Sources */,
 				29E1B10D281419A300BB3227 /* ConnectionError.swift in Sources */,
 				29E1B11128152A8D00BB3227 /* DefaulAudioRepository.swift in Sources */,
+				29E7386D2816F4BC006CE487 /* ProgressCicrle.swift in Sources */,
 				FAF516E72813E01C00730323 /* SongsFlowCoordinator.swift in Sources */,
 				29E1B10F28141E8900BB3227 /* Alertable.swift in Sources */,
 			);

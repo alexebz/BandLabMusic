@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-mA-ESE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-mA-ESE">
+                                <rect key="frame" x="92" y="7" width="375" height="667"/>
                                 <connections>
                                     <segue destination="0IW-06-iFT" kind="embed" identifier="SongsListTableViewController" id="jBd-QT-4dH"/>
                                 </connections>
@@ -62,26 +63,44 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78C-1J-hiA" userLabel="Action button">
-                                                    <rect key="frame" x="310" y="80" width="30" height="30"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-lv-AGM" userLabel="Action Container">
+                                                    <rect key="frame" x="305" y="80" width="30" height="30"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-Av-Y5n" customClass="ProgressCicrle" customModule="BandLabApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78C-1J-hiA" userLabel="Action button">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <state key="normal" image="download-icon"/>
+                                                            <connections>
+                                                                <action selector="actionButtonPressed" destination="4SO-8b-6NS" eventType="touchUpInside" id="k2H-fn-7Hg"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="50v-4C-NCc"/>
-                                                        <constraint firstAttribute="width" constant="30" id="XEI-Zp-aYJ"/>
+                                                        <constraint firstItem="78C-1J-hiA" firstAttribute="height" secondItem="Mb8-lv-AGM" secondAttribute="height" id="2et-jn-Xg0"/>
+                                                        <constraint firstItem="78C-1J-hiA" firstAttribute="centerX" secondItem="Mb8-lv-AGM" secondAttribute="centerX" id="9au-Tm-Hoz"/>
+                                                        <constraint firstItem="78C-1J-hiA" firstAttribute="width" secondItem="Mb8-lv-AGM" secondAttribute="width" id="GAv-Pc-6fM"/>
+                                                        <constraint firstItem="jHe-Av-Y5n" firstAttribute="width" secondItem="Mb8-lv-AGM" secondAttribute="width" id="LiH-Z8-8K4"/>
+                                                        <constraint firstItem="jHe-Av-Y5n" firstAttribute="centerX" secondItem="Mb8-lv-AGM" secondAttribute="centerX" id="PfX-0m-QlD"/>
+                                                        <constraint firstItem="jHe-Av-Y5n" firstAttribute="height" secondItem="Mb8-lv-AGM" secondAttribute="height" id="WS1-Ow-wMb"/>
+                                                        <constraint firstAttribute="height" constant="30" id="f9E-Nq-Qeo"/>
+                                                        <constraint firstItem="jHe-Av-Y5n" firstAttribute="centerY" secondItem="Mb8-lv-AGM" secondAttribute="centerY" id="g8h-hM-BSe"/>
+                                                        <constraint firstAttribute="width" constant="30" id="l0d-ko-mcv"/>
+                                                        <constraint firstItem="78C-1J-hiA" firstAttribute="centerY" secondItem="Mb8-lv-AGM" secondAttribute="centerY" id="seZ-De-H4b"/>
                                                     </constraints>
-                                                    <state key="normal" image="download-icon"/>
-                                                    <connections>
-                                                        <action selector="actionButtonPressed" destination="4SO-8b-6NS" eventType="touchUpInside" id="k2H-fn-7Hg"/>
-                                                    </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.57647058823529407" green="0.58431372549019611" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="tWk-ql-T8D" firstAttribute="top" secondItem="yGS-Hl-1iC" secondAttribute="top" constant="10" id="M37-La-SdI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mb8-lv-AGM" secondAttribute="bottom" constant="10" id="ST8-ph-F0Y"/>
                                                 <constraint firstAttribute="height" constant="120" id="fDk-vA-Ql0"/>
-                                                <constraint firstAttribute="trailing" secondItem="78C-1J-hiA" secondAttribute="trailing" constant="15" id="jDe-Aw-0NE"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mb8-lv-AGM" secondAttribute="trailing" constant="20" id="jVf-9V-doy"/>
                                                 <constraint firstItem="tWk-ql-T8D" firstAttribute="leading" secondItem="yGS-Hl-1iC" secondAttribute="leading" constant="10" id="rbc-Gu-RCs"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tWk-ql-T8D" secondAttribute="trailing" constant="10" id="sqp-m3-dif"/>
-                                                <constraint firstAttribute="bottom" secondItem="78C-1J-hiA" secondAttribute="bottom" constant="10" id="w7E-Ym-A6U"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -95,6 +114,7 @@
                                 <connections>
                                     <outlet property="actionButton" destination="78C-1J-hiA" id="KwI-Fh-HJG"/>
                                     <outlet property="backgroundContainer" destination="yGS-Hl-1iC" id="Jf2-BK-wVf"/>
+                                    <outlet property="progressCircle" destination="jHe-Av-Y5n" id="eW0-w6-avp"/>
                                     <outlet property="songTitle" destination="tWk-ql-T8D" id="z0c-iq-1mt"/>
                                 </connections>
                             </tableViewCell>
@@ -112,5 +132,8 @@
     </scenes>
     <resources>
         <image name="download-icon" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
