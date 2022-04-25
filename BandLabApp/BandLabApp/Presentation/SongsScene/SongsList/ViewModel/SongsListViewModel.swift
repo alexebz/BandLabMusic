@@ -26,7 +26,7 @@ protocol SongsListViewModelOutput {
     var errorTitle: String { get }
 }
 
-final class DefaultSongsListViewModel: SongsListViewModel {
+final class DefaultSongsListViewModel: SongsListViewModel, SongsListItemViewModelDelegate {
     
     private let songRepository: SongsRepository
     private let audioRepository: AudioRepository
@@ -67,10 +67,17 @@ final class DefaultSongsListViewModel: SongsListViewModel {
     
     private func updateSongs(_ songs: Songs) {
         items.value = songs.songs.map { song in
-            SongsListItemViewModel(song: song, audioRepository: audioRepository)
+            let model = SongsListItemViewModel(song: song, audioRepository: audioRepository)
+            model.delegate = self
+            return model
         }
     }
-
+    
+    internal func songStartedPlaying() {
+        for model in items.value {
+            model.pauseAudio()
+        }
+    }
 }
 
 // MARK: - INPUT. View event methods

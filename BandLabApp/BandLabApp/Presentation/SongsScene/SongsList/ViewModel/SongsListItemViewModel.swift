@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-enum AudioItemState {
+enum AudioItemState: Equatable {
     case Initial
     case Loading(Double)
     case ReadyToPlay
@@ -17,8 +17,13 @@ enum AudioItemState {
     case Paused
 }
 
+protocol SongsListItemViewModelDelegate {
+    func songStartedPlaying()
+}
+
 protocol SongsListItemViewModelInput {
     func peformStateAction()
+    func pauseAudio()
 }
 
 protocol SongsListItemViewModelOutput {
@@ -28,6 +33,8 @@ protocol SongsListItemViewModelOutput {
 final class SongsListItemViewModel: SongsListItemViewModelOutput {
     
     var audioItemState: Observable<AudioItemState> = Observable(.Initial)
+    var delegate: SongsListItemViewModelDelegate?
+    
     
     let title: String
     let audioURL: String
@@ -97,9 +104,16 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
     }
     
     private func playAudio(_ player: AVAudioPlayer) {
+        delegate?.songStartedPlaying()
         player.prepareToPlay()
         player.play()
         audioItemState.value = .Playing
+    }
+    
+    internal func pauseAudio() {
+        guard let player = self.audioPlayer else { return }
+        guard audioItemState.value == AudioItemState.Playing else { return }
+        self.pauseAudio(player)
     }
     
     private func pauseAudio(_ player: AVAudioPlayer) {
@@ -109,6 +123,7 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
     
     private func resumePlaying(_ player: AVAudioPlayer) {
         player.play()
+        delegate?.songStartedPlaying()
         audioItemState.value = .Playing
     }
 
