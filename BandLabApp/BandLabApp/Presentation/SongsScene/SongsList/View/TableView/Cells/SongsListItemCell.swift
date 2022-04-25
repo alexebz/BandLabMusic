@@ -21,6 +21,45 @@ final class SongsListItemCell: UITableViewCell {
     func fill(with viewModel: SongsListItemViewModel) {
         self.viewModel = viewModel
         songTitle.text = viewModel.title
+        bind(to: self.viewModel)
+        setupView()
+    }
+    
+    private func setupView() {
+        actionButton.imageView?.layer.cornerRadius = actionButton.bounds.height / 2.0
+        backgroundContainer.layer.cornerRadius = 10.0
+    }
+    
+    private func bind(to viewModel: SongsListItemViewModel) {
+        viewModel.audioItemState.observe(on: self) { [weak self] _ in self?.stateUpdated() }
+    }
+    
+    private func unbind(from viewModel: SongsListItemViewModel) {
+        viewModel.audioItemState.remove(observer: self)
+    }
+    
+    private func stateUpdated() {
+        switch viewModel.audioItemState.value {
+        case .Initial:
+            actionButton.setImage(UIImage(named: "download-icon"), for: .normal)
+            break
+        case .Loading(_):
+            break
+        case .ReadyToPlay:
+            actionButton.setImage(UIImage(named: "play-icon"), for: .normal)
+            break
+        case .Playing:
+            actionButton.setImage(UIImage(named: "pause-icon"), for: .normal)
+            break
+        case .Paused:
+            actionButton.setImage(UIImage(named: "play-icon"), for: .normal)
+            break
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        unbind(from: self.viewModel)
     }
     
     @IBAction func actionButtonPressed() {

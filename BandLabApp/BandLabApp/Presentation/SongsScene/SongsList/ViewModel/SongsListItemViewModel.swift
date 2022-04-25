@@ -80,15 +80,19 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
             if case let .success(data) = result {
                 print(data)
                 self.observation?.invalidate()
-                try! self.audioPlayer = AVAudioPlayer(data: data)
-                self.audioItemState.value = .ReadyToPlay
+                do {
+                    try self.audioPlayer = AVAudioPlayer(data: data)
+                    self.audioItemState.value = .ReadyToPlay
+                } catch {
+                    self.audioItemState.value = .Initial
+                    print("error convertig audio data from \(self.audioURL)")
+                }
         
             }
         })
         observation = task?.progressKVO?.observe(\.fractionCompleted) { [weak self] progress, _ in
             guard let self = self else { return }
             self.audioItemState.value = .Loading(progress.fractionCompleted)
-            print("progress: ", progress.fractionCompleted)
         }
     }
     

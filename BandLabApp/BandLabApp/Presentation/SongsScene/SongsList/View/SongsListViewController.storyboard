@@ -62,13 +62,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78C-1J-hiA" userLabel="Action button">
-                                                    <rect key="frame" x="295" y="60" width="50" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78C-1J-hiA" userLabel="Action button">
+                                                    <rect key="frame" x="310" y="80" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="50v-4C-NCc"/>
-                                                        <constraint firstAttribute="width" constant="50" id="XEI-Zp-aYJ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="50v-4C-NCc"/>
+                                                        <constraint firstAttribute="width" constant="30" id="XEI-Zp-aYJ"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" image="download-icon"/>
                                                     <connections>
                                                         <action selector="actionButtonPressed" destination="4SO-8b-6NS" eventType="touchUpInside" id="k2H-fn-7Hg"/>
                                                     </connections>
@@ -78,7 +78,7 @@
                                             <constraints>
                                                 <constraint firstItem="tWk-ql-T8D" firstAttribute="top" secondItem="yGS-Hl-1iC" secondAttribute="top" constant="10" id="M37-La-SdI"/>
                                                 <constraint firstAttribute="height" constant="120" id="fDk-vA-Ql0"/>
-                                                <constraint firstAttribute="trailing" secondItem="78C-1J-hiA" secondAttribute="trailing" constant="10" id="jDe-Aw-0NE"/>
+                                                <constraint firstAttribute="trailing" secondItem="78C-1J-hiA" secondAttribute="trailing" constant="15" id="jDe-Aw-0NE"/>
                                                 <constraint firstItem="tWk-ql-T8D" firstAttribute="leading" secondItem="yGS-Hl-1iC" secondAttribute="leading" constant="10" id="rbc-Gu-RCs"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tWk-ql-T8D" secondAttribute="trailing" constant="10" id="sqp-m3-dif"/>
                                                 <constraint firstAttribute="bottom" secondItem="78C-1J-hiA" secondAttribute="bottom" constant="10" id="w7E-Ym-A6U"/>
@@ -110,4 +110,7 @@
             <point key="canvasLocation" x="540" y="145.27736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="download-icon" width="100" height="100"/>
+    </resources>
 </document>
