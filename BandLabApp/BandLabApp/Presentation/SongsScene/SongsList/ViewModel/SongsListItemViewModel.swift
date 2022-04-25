@@ -85,7 +85,7 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
         let task = audioRepository.downloadSong(with: self.audioURL, completion: { [weak self] result in
             guard let self = self else { return }
             if case let .success(data) = result {
-                print(data)
+                print("Song data loaded: \(data)")
                 self.observation?.invalidate()
                 do {
                     try self.audioPlayer = AVAudioPlayer(data: data)
@@ -99,7 +99,9 @@ extension SongsListItemViewModel: SongsListItemViewModelInput {
         })
         observation = task?.progressKVO?.observe(\.fractionCompleted) { [weak self] progress, _ in
             guard let self = self else { return }
-            self.audioItemState.value = .Loading(progress.fractionCompleted)
+            DispatchQueue.main.async {
+                self.audioItemState.value = .Loading(progress.fractionCompleted)
+            }
         }
     }
     

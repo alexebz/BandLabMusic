@@ -13,7 +13,5 @@ final class AppAppearance {
 
     static func setupAppearance() {
         // Setup possible app Appearance
-//        UINavigationBar.appearance().barTintColor = .black
-//        UINavigationBar.appearance().tintColor = .white
     }
 }
